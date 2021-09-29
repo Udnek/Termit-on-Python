@@ -621,7 +621,7 @@ def decision(x,y,direc,mode, id, eatfind):
 
         elif lt == 1:
             chance = rd.randint(1, 100)
-            if chance > 50:
+            if chance > 90:
                 return "none", trop[0]
             else:
                 if ln > 1:
@@ -636,7 +636,7 @@ def decision(x,y,direc,mode, id, eatfind):
 
         else:
             """есть шанс что не будет деалть новую дорогу"""
-            if rd.randint(1,100) > 10 or ln == 0:
+            if rd.randint(1,100) > 1 or ln == 0:
                 '''lt > 1'''
                 if napr(direc, -2) in trop:
                     trop.remove(napr(direc, -2))
@@ -1014,7 +1014,7 @@ screen = pg.display.set_mode((width, hight))
 pg.display.set_caption("10 BIT TERMIT")
 pg.display.set_icon(termitn)
 timer_event = pg.USEREVENT + 0
-pg.time.set_timer(timer_event, 15)
+pg.time.set_timer(timer_event, 120)
 paint()
 world_generate()
 pg.display.update()
